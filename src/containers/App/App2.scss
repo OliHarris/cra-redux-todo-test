@@ -1,0 +1,443 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* -----------------------------------------------
+:: Reset
+-------------------------------------------------- */
+meta.foundation-data-attribute-namespace {
+	font-family: false; /* Initialise Foundation 5.5.1 JS for modals, column equalizer, #mobile-main-menu .top-bar (used as the mobile menu between 320px-768px), #primary .f-dropdown (used beyond 768px) */
+}
+
+*,
+*:before,
+*:after {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+html, body {
+	width: 100% !important;
+	overflow-x: hidden; /* Prevent horizontal scroll on devices */
+}
+
+html {
+	height: 100% !important;
+    -webkit-text-size-adjust: none; /* Prevent font scaling in landscape */
+}
+
+html, body, div, span, object, iframe,
+p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section { 
+    display:block;
+}
+
+img, object, embed {
+	max-width: 100%;
+}
+
+object, embed {
+	height: 100%;
+}
+
+img {
+	display:inline-block;
+	vertical-align: middle;
+	-ms-interpolation-mode: bicubic;
+}
+
+button, .button {
+	position: relative;
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+	font-family: inherit;
+	font-size: inherit;
+	color: inherit;
+    line-height: 1;
+	text-align: inherit;
+	text-decoration: none;
+	background: none;
+	border: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	transition: none;
+	cursor: pointer;
+}
+
+button::-moz-focus-inner {
+	border: 0;
+	padding: 0;
+}
+
+button:hover, button:focus,.button:hover, .button:focus {
+    color: transparent; 
+	background-color: transparent;
+	outline: none;
+}
+
+
+/* -----------------------------------------------
+:: Float clearing
+-------------------------------------------------- */
+.cf:after,
+.row:after {
+	clear: both;
+	content: ".";
+	display: block;
+	height: 0;
+	visibility: hidden;
+	font-size: 0;
+}
+
+
+/* -----------------------------------------------
+:: Structure
+-------------------------------------------------- */
+html {
+	background: #316bfa;
+}
+
+body {
+	position: relative;
+	height: auto;
+/*	font-family: 'Battersea', Tahoma, sans-serif;
+*/	font-family: 'Berlingske', Tahoma, sans-serif;
+	font-weight: 400;
+	font-style: normal;
+/*	color: #474c55;
+*/	color: #000;	
+	line-height: 1.625;
+    background: #316bfa;
+    border: 1em solid #316bfa;
+	cursor: auto;
+}
+
+h1, h2, h3, h4, h5 {
+	text-rendering: optimizeLegibility;
+}
+
+h1 { 
+	margin: 1rem 0;
+	font-family: 'Berlingske', Tahoma, sans-serif;
+	font-weight: 400;
+	font-size: 28px;
+	font-size: 1.75rem;
+	color: #000;
+	line-height: 1.4;
+	letter-spacing: -1px;
+}
+
+/*h2, h3, h4 {
+	margin: 0 0 0.5rem 0; 
+}
+
+h2, h3 {
+	color: #070078;
+}
+
+h2 {
+	font-family: 'Battersea', Tahoma, sans-serif;
+	font-weight: 700;
+	font-size: 22px;
+	font-size: 1.375rem;
+	line-height: 1.5;
+}
+
+h2.alternative {
+    font-family: 'Berlingske', Tahoma, sans-serif;
+}*/
+
+h3, label {
+	font-family: 'Battersea', Tahoma, sans-serif;
+	font-weight: 700; 
+	font-size: 17px;
+	font-size: 1.0625rem;
+	line-height: 1.625;
+}
+
+/*h4 { 
+	font-family: 'Battersea', Tahoma, sans-serif;
+	font-weight: 400;
+	font-size: 12px;
+	font-size: 0.75rem;
+	line-height: 1.625;
+}*/
+
+p, ul, ol {
+	margin-bottom:1.25rem;
+	font-size: 1rem;
+  	font-size: 16px;
+}
+
+p {
+	font-family: inherit;
+	font-weight: normal;
+	line-height: 1.6;
+	text-rendering: optimizeLegibility;
+}
+
+ul.no-disc {
+	margin-left: 0;
+	margin-bottom:0;
+	list-style-type: none;
+}
+
+ul, ol {
+	margin-left: 1.375em;
+	list-style-type: disc;
+	list-style-position: outside;
+}
+
+ol {
+	list-style-type: decimal;
+}
+
+em, i {
+	font-style: italic;
+/*	font-family: 'Battersea', Tahoma, sans-serif;
+*/	font-family: 'Berlingske', Tahoma, sans-serif;
+	font-weight: 300;
+	line-height: inherit;
+}
+
+strong, b {
+	font-weight: bold;
+/*	font-family: 'Battersea', Tahoma, sans-serif;
+*/	font-family: 'Berlingske', Tahoma, sans-serif;
+	font-weight: 700;
+	line-height: inherit;
+}
+ 
+a {
+	font-weight: 700;
+	color: #737370;
+	line-height: inherit;
+	text-decoration: none;
+	outline: none;	
+}
+
+a:hover, a:focus {
+	color: #f1563f;
+}
+
+a:hover {
+  cursor: pointer;
+}
+
+
+/* -----------------------------------------------
+:: Element control - general
+-------------------------------------------------- */
+.center {
+	margin: 0 auto 0 auto;
+	text-align: center;
+}
+
+.spacer {
+	padding-bottom: 1em;
+}
+
+.large-spacer {
+	padding-bottom: 2em;
+}
+
+.xlarge-spacer {
+	padding-bottom: 3em;
+}
+
+.overflow {
+	overflow: hidden;
+}
+
+.left {
+	float: left !important;
+}
+
+.right {
+	float: right !important;
+}
+
+.hide {
+	display: none;
+}
+
+.full-width-background {
+    margin: 0 -100%;
+    padding: 1em 100%;
+    background: #f7f5f2;	
+}
+
+
+/* -----------------------------------------------
+:: Element control - checkbox
+-------------------------------------------------- */
+input[type='checkbox'] {
+	display: none;
+}
+
+input[type='checkbox']+span {
+	position: relative;
+	display: inline-block;
+    height: 24px;
+	margin: 0 0 0 1em;
+	padding: 0 10px;
+    vertical-align: -7px;
+	background-color: #fff;
+	border: 1px solid #737370;
+	// box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05);
+	-webkit-appearance: none;
+}
+
+input[type='checkbox']+span.checked {
+	background-color: #f7f5f2;
+	border: 1px solid #474c55;
+}
+
+input[type='checkbox']+span.checked:after {
+	content: '\2714';
+	position: absolute;
+	top: 2px;
+	left: 3px;
+	font-size: 18px;
+	line-height: 1;
+	color: #737370;
+}
+
+
+/* -----------------------------------------------
+:: General Buttons
+-------------------------------------------------- */
+button.rounded {
+	padding: 0.5em 2em 0.5em 1em;
+    font-weight: 700;
+    font-size: 16px;
+    font-size: 1rem;
+	color: #737370;
+	background-color: #e3e4e2;
+    border: 1px solid #737370;
+	-webkit-border-radius:50px;
+	   -moz-border-radius:50px;
+	    -ms-border-radius:50px;
+	     -o-border-radius:50px;
+	        border-radius:50px;
+}
+
+button.rounded:after {
+    content: url('../../assets/images/right-thin-chevron.svg');
+    position: absolute;
+    right: 16px;
+    width: 8px;
+    height: 16px;
+    // line-height: 0;
+}
+
+
+/* -----------------------------------------------
+:: #root
+-------------------------------------------------- */
+#root {
+    position: relative;
+	display: block; /* IE hack */
+	background: #316bfa;	
+}
+
+#root > * {
+	max-width: 64em; /* 1024px; */
+	margin: 0 auto;
+	background: #316bfa; /* For browsers that do not support gradients */
+  	background: -webkit-radial-gradient(circle, #fff, #316bfa); /* Safari */
+  	background: -o-radial-gradient(circle, #fff, #316bfa); /* Opera 11.6 to 12.0 */
+  	background: -moz-radial-gradient(circle, #fff, #316bfa); /* Firefox 3.6 to 15 */
+  	background: radial-gradient(circle, #fff, #316bfa); /* Standard syntax */
+	border: 0.5em solid #fac031;
+}
+
+
+/* -----------------------------------------------
+:: #header
+-------------------------------------------------- */
+#header {
+	text-align: center;
+}
+
+#header h1 {
+	margin: 1rem 0;
+}
+
+#header input {
+	padding: 7px;
+}
+
+
+/* -----------------------------------------------
+:: #todo-items
+-------------------------------------------------- */
+#todo-items {
+	padding: 0 14px;
+}
+
+#todo-items h2 {
+	word-wrap: break-word;
+}
+
+
+/* -----------------------------------------------
+:: Media specific
+-------------------------------------------------- */
+@media only screen and (min-width:20em) {
+	/*
+	min-width:320px - iPhone portrait - small-grid;
+	*/
+	#header input { width: 100%; margin-bottom: 1rem; }
+	#todo-items label { margin: 0;line-height: 42px; }
+	.hide-small { display: none; }
+}
+
+@media only screen and (min-width:30em) {
+	/*
+	min-width:480px - iPhone landscape - medium-grid;
+	*/
+	#header input { width: auto; margin: 0 14px; }
+}
+
+@media only screen and (min-width: 48em) {
+	/*
+	min-width:768px - iPad portrait - large-grid;
+	*/
+	#todo-items label > strong { color: #fac031; }
+	.hide-large { display: none; }
+	.show-large { display: block; }
+}
+
+@media screen and (min-width:64em) {
+	/*
+	min-width:1024px - iPad landscape - xlarge-grid;
+	*/
+}
+
+@media screen and (min-width:80em) {
+	/*
+	min-width:1280px - Nexus7 landscape - large-grid;
+	*/
+}
