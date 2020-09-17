@@ -1,0 +1,75 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* -----------------------------------------------
+:: #header
+-------------------------------------------------- */
+#header {
+	text-align: center;
+}
+
+#header h1 {
+	margin: 1rem 0;
+}
+
+#header input {
+	padding: 7px;
+}
+
+#header button:disabled {
+	background-color: transparent;
+	cursor: auto;
+}
+
+
+/* -----------------------------------------------
+:: #todo-items
+-------------------------------------------------- */
+#todo-items {
+	padding: 0 14px;
+}
+
+#todo-items h2 {
+	word-wrap: break-word;
+}
+
+
+/* -----------------------------------------------
+:: Media specific
+-------------------------------------------------- */
+@media only screen and (min-width:20em) {
+	/*
+	min-width:320px - iPhone portrait - small-grid;
+	*/
+	#header input { width: 100%; margin-bottom: 1rem; }
+	#todo-items h2 { margin-top: 1rem; }
+	.hide-small { display: none; }
+}
+
+@media only screen and (min-width:30em) {
+	/*
+	min-width:480px - iPhone landscape - medium-grid;
+	*/
+	#header input { width: auto; margin: 0 14px; }
+	#todo-items h2 { margin-top: 0; }
+}
+
+@media only screen and (min-width: 48em) {
+	/*
+	min-width:768px - iPad portrait - large-grid;
+	*/
+	.hide-large { display: none; }
+	.show-large { display: block; }
+}
+
+@media screen and (min-width:64em) {
+	/*
+	min-width:1024px - iPad landscape - xlarge-grid;
+	*/
+}
+
+@media screen and (min-width:80em) {
+	/*
+	min-width:1280px - Nexus7 landscape - large-grid;
+	*/
+}

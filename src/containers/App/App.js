@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useReducer } from 'react';
 
-import './App.scss';
-import './App2.scss';
+import './todo-fonts.scss';
+import './todo-base.scss';
+import './todo-styles.scss';
 
 function Initialise() {
   //set up dummy test data
@@ -21,7 +22,7 @@ function Initialise() {
   //reducer logic
   const reducer = (todoList, action) => {
     //if updateTodoVal function
-    if(action.type === 'update') {
+    if (action.type === 'update') {
       console.log("UPDATE");
       //copy todoList array (no mutate original array)
       const newArray = todoList.slice();
@@ -36,7 +37,7 @@ function Initialise() {
       return newArray;
     }
     //if addTodoVal function
-    if(action.type === 'add') {
+    if (action.type === 'add') {
       console.log("ADD");
       //push to todoList array only if todoVal
       if (action.payload !== "") {
@@ -54,7 +55,7 @@ function Initialise() {
       return todoList;
     }
     //if removeTodoVal function
-    if(action.type === 'remove') {
+    if (action.type === 'remove') {
       console.log("REMOVE");
       //remove from todoList array - filter better than splice (no mutate original array)
       let filteredArray = todoList.filter(todo => todo.id !== action.payload);
@@ -81,16 +82,14 @@ function Initialise() {
     const [checked, setChecked] = useState(status);
     return (
       <>
-        <label htmlFor="checkbox"
+        <label htmlFor="checkbox" className="rounded"
           onClick={() => {
             updateTodoVal(id);
             //whatever the value of checked is return opposite
             setChecked(checked => !checked);
           }}>          
           <strong>Done?</strong>
-          <input type="checkbox" readOnly
-            checked={checked}
-          />
+          <input type="checkbox" readOnly />
           <span className={checked ? "checked" : ""}></span>
         </label>
       </>
@@ -103,6 +102,7 @@ function Initialise() {
       <section className="row">
         <div id="header" className="col-12">
           <h1>Todo App</h1>
+          <hr />
           <div className="center">
             <input type="textbox"
               value={todoVal}
@@ -110,7 +110,9 @@ function Initialise() {
               onChange={e => setTodoVal(e.target.value)}
               placeholder="Enter todo"
             />
-            <button className="rounded" onClick={() => addTodoVal(todoVal)}>
+            <button className="rounded"
+              onClick={() => addTodoVal(todoVal)}
+              disabled={todoVal === ""}>
               Add
             </button>
           </div>
@@ -124,13 +126,13 @@ function Initialise() {
               <li key={idx} className="row">
                 <div className="col-12">
                   <div className="row">
-                    <div className="col-6 col-md-3 columns">
+                    <div className="col-7 col-md-3">
                       <Checkbox id={todo.id} status={todo.status} />
                     </div>
-                    <div className="col-12 col-md-6 columns hide-small show-large">
+                    <div className="col-12 col-md-6 hide-small show-large">
                       <h2 className="center">"{todo.name}"</h2>
                     </div>
-                    <div className="col-6 col-md-3 columns">
+                    <div className="col-5 col-md-3">
                       <div className="cf">
                         <button className="right rounded" onClick={() => removeTodoVal(todo.id)}>
                           &#128465;

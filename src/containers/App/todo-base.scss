@@ -154,19 +154,20 @@ h1 {
 
 h2, h3 {
 	color: #070078;
-}
+}*/
 
 h2 {
-	font-family: 'Battersea', Tahoma, sans-serif;
+	// font-family: 'Battersea', Tahoma, sans-serif;
+    font-family: 'Berlingske', Tahoma, sans-serif;
 	font-weight: 700;
 	font-size: 22px;
 	font-size: 1.375rem;
 	line-height: 1.5;
 }
 
-h2.alternative {
+/*h2.alternative {
     font-family: 'Berlingske', Tahoma, sans-serif;
-}*/
+}
 
 h3, label {
 	font-family: 'Battersea', Tahoma, sans-serif;
@@ -176,7 +177,7 @@ h3, label {
 	line-height: 1.625;
 }
 
-/*h4 { 
+h4 { 
 	font-family: 'Battersea', Tahoma, sans-serif;
 	font-weight: 400;
 	font-size: 12px;
@@ -328,19 +329,29 @@ input[type='checkbox']+span.checked:after {
 /* -----------------------------------------------
 :: General Buttons
 -------------------------------------------------- */
+label[for='checkbox'],
 button.rounded {
-	padding: 0.5em 2em 0.5em 1em;
     font-weight: 700;
     font-size: 16px;
     font-size: 1rem;
 	color: #737370;
 	background-color: #e3e4e2;
     border: 1px solid #737370;
-	-webkit-border-radius:50px;
-	   -moz-border-radius:50px;
-	    -ms-border-radius:50px;
-	     -o-border-radius:50px;
-	        border-radius:50px;
+	// -webkit-border-radius:50px;
+	//    -moz-border-radius:50px;
+	//     -ms-border-radius:50px;
+	//      -o-border-radius:50px;
+	//         border-radius:50px;
+	cursor: pointer;
+}
+
+label[for='checkbox'] {
+	margin: 0;
+	padding: 0.5em 1em;
+}
+
+button.rounded {
+	padding: 0.5em 2em 0.5em 1em;
 }
 
 button.rounded:after {
@@ -359,7 +370,7 @@ button.rounded:after {
 #root {
     position: relative;
 	display: block; /* IE hack */
-	background: #316bfa;	
+	background: #316bfa;
 }
 
 #root > * {
@@ -371,73 +382,4 @@ button.rounded:after {
   	background: -moz-radial-gradient(circle, #fff, #316bfa); /* Firefox 3.6 to 15 */
   	background: radial-gradient(circle, #fff, #316bfa); /* Standard syntax */
 	border: 0.5em solid #fac031;
-}
-
-
-/* -----------------------------------------------
-:: #header
--------------------------------------------------- */
-#header {
-	text-align: center;
-}
-
-#header h1 {
-	margin: 1rem 0;
-}
-
-#header input {
-	padding: 7px;
-}
-
-
-/* -----------------------------------------------
-:: #todo-items
--------------------------------------------------- */
-#todo-items {
-	padding: 0 14px;
-}
-
-#todo-items h2 {
-	word-wrap: break-word;
-}
-
-
-/* -----------------------------------------------
-:: Media specific
--------------------------------------------------- */
-@media only screen and (min-width:20em) {
-	/*
-	min-width:320px - iPhone portrait - small-grid;
-	*/
-	#header input { width: 100%; margin-bottom: 1rem; }
-	#todo-items label { margin: 0;line-height: 42px; }
-	.hide-small { display: none; }
-}
-
-@media only screen and (min-width:30em) {
-	/*
-	min-width:480px - iPhone landscape - medium-grid;
-	*/
-	#header input { width: auto; margin: 0 14px; }
-}
-
-@media only screen and (min-width: 48em) {
-	/*
-	min-width:768px - iPad portrait - large-grid;
-	*/
-	#todo-items label > strong { color: #fac031; }
-	.hide-large { display: none; }
-	.show-large { display: block; }
-}
-
-@media screen and (min-width:64em) {
-	/*
-	min-width:1024px - iPad landscape - xlarge-grid;
-	*/
-}
-
-@media screen and (min-width:80em) {
-	/*
-	min-width:1280px - Nexus7 landscape - large-grid;
-	*/
 }
