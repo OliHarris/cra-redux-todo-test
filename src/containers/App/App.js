@@ -24,7 +24,7 @@ function Initialise() {
     //if updateTodoVal function
     if (action.type === 'update') {
       console.log("UPDATE");
-      //copy todoList array (no mutate original array)
+      //copy todoList array to return new array (no mutate original array)
       const newArray = todoList.slice();
       //update relevant array status
       newArray.map((todo, index) => {
@@ -39,25 +39,27 @@ function Initialise() {
     //if addTodoVal function
     if (action.type === 'add') {
       console.log("ADD");
+      //copy todoList array to return new array (no mutate original array)
+      const newArray = todoList.slice();
       //push to todoList array only if todoVal
       if (action.payload !== "") {
         //find last id in array
         let lastId = 0;
-        if (todoList.length) {
-          lastId = todoList[todoList.length - 1].id;
+        if (newArray.length) {
+          lastId = newArray[newArray.length - 1].id;
         }
-        todoList.push(
+        newArray.push(
           { id: lastId + 1, name: action.payload, status: false}
         );
         setTodoVal("");
       };
-      console.log(todoList);
-      return todoList;
+      console.log(newArray);
+      return newArray;
     }
     //if removeTodoVal function
     if (action.type === 'remove') {
       console.log("REMOVE");
-      //remove from todoList array - filter better than splice (no mutate original array)
+      //filter todoList array to return new array; do not use splice (no mutate original array)
       let filteredArray = todoList.filter(todo => todo.id !== action.payload);
       console.log(filteredArray);
       return filteredArray;          
