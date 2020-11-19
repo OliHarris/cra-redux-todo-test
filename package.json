@@ -2,7 +2,7 @@
   "name": "create-react-app-starter",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://enginebreath.uk/work-examples/cra-redux-todo-test/build/",    
+  "homepage": "https://enginebreath.uk/work-examples/cra-redux-todo-test/build/",    
   "dependencies": {
     "@testing-library/react": "^9.4.0",
     "@testing-library/user-event": "^7.2.1",

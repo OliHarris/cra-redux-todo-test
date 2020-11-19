@@ -90,7 +90,7 @@ function Initialise() {
             //whatever the value of checked is return opposite
             setChecked(checked => !checked);
           }}>          
-          <strong>Done?</strong>
+          Done?
           <input type="checkbox" readOnly />
           <span className={checked ? "checked" : ""}></span>
         </label>
